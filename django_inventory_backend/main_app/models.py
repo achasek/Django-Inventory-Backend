@@ -3,6 +3,9 @@ from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
+# TO SEED DATA
+# python3 manage.py loaddata data
+
 class Item(models.Model):
   name = models.CharField(max_length = 100)
   price = models.IntegerField(default = 0)
