@@ -18,7 +18,6 @@ def items_index(request):
     """
     List all code snippets, or create a new snippet.
     """
-    print(request.method, "METHOD !!!!!!!!!")
     if request.method == 'GET':
         items = Item.objects.all()
         serializer = ItemSerializer(items, many=True)
@@ -63,7 +62,6 @@ def users_index(request):
     """
     List all code snippets, or create a new snippet.
     """
-    print(request.method, "METHOD !!!!!!!!!")
     if request.method == 'GET':
         users = Profile.objects.all()
         serializer = ProfileSerializer(users, many=True)
@@ -140,7 +138,7 @@ def view_cart(request, pk):
     #     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(['PUT'])        
-def add_to_cart(request, removeOrAdd,userpk, itempk):
+def edit_cart(request, removeOrAdd,userpk, itempk):
     try:
         profile = Profile.objects.get(pk=userpk)
         item = Item.objects.get(pk=itempk)
