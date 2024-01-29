@@ -6,6 +6,9 @@ from django.dispatch import receiver
 # TO SEED DATA
 # python3 manage.py loaddata data
 
+
+# to officially extend Django User Model, remove lines 23-24 and uncomment out the rest
+
 class Item(models.Model):
   name = models.CharField(max_length = 100)
   price = models.IntegerField(default = 0)
